@@ -10,7 +10,6 @@ use Zend\Diactoros\ServerRequest;
 trait MakesHttpRequestsTrait
 {
     private $headers = [];
-    protected $data;
 
     public function withHeader(string $name, string $content): self
     {
