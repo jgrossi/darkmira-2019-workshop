@@ -1,5 +1,6 @@
 {
     "require": {
+        "ext-json": "*",
         "league/route": "^4.2",
         "zendframework/zend-diactoros": "^2.1",
         "zendframework/zend-httphandlerrunner": "^1.1",

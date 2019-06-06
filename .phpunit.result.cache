@@ -1,1 +1,0 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":325:{a:2:{s:7:"defects";a:1:{s:85:"Acme\Tests\Domain\RateTalkHandlerTest::test_rates_the_talk_and_return_the_rate_entity";i:3;}s:5:"times";a:2:{s:67:"Acme\Tests\Domain\RateTalkCommandTest::test_it_returns_all_the_data";d:0.008;s:85:"Acme\Tests\Domain\RateTalkHandlerTest::test_rates_the_talk_and_return_the_rate_entity";d:0.015;}}}
