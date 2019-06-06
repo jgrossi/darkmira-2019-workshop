@@ -6,7 +6,7 @@ namespace Acme\Infra;
 
 use Acme\Domain\Entity\Rate;
 
-final class RateRepository extends AbstractRepository
+class RateRepository extends AbstractRepository implements RepositoryInterface
 {
     private const TABLE_NAME = 'rates';
 

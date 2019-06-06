@@ -6,7 +6,7 @@ namespace Acme\Infra;
 
 use Acme\Domain\Entity\Talk;
 
-final class TalkRepository extends AbstractRepository
+class TalkRepository extends AbstractRepository implements RepositoryInterface
 {
     private const TABLE_NAME = 'talks';
 

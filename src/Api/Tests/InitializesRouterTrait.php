@@ -4,19 +4,22 @@ declare(strict_types=1);
 
 namespace Acme\Api\Tests;
 
+use Acme\Api\Container;
 use League\Route\Router;
 
 trait InitializesRouterTrait
 {
+    /** @var \League\Container\Container */
+    protected $container;
+
     /** @var Router */
     protected $router;
 
     public function setUp(): void
     {
-        if (!$this->router) {
-            $this->router = require __DIR__.'/../../../config/routes.php';
-        }
+        $this->container = Container::refresh();
 
-        parent::setUp();
+        $application = new \Acme\Api\Application();
+        $this->router = $application->getRouter();
     }
 }

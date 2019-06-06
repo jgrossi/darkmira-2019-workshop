@@ -9,8 +9,6 @@ use Zend\Diactoros\ServerRequest;
 
 trait MakesHttpRequestsTrait
 {
-    use InitializesRouterTrait;
-
     private $headers = [];
 
     public function withHeader(string $name, string $content): self
@@ -29,7 +27,7 @@ trait MakesHttpRequestsTrait
             $uploadedFiles = [],
             $uri,
             $method,
-            $body = 'php://input',
+            $body = $method === 'POST' ? $data : [],
             $this->headers,
             $cookies = [],
             $queryParams = $method === 'GET' ? $data : [],

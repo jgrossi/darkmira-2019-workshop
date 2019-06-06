@@ -24,4 +24,11 @@ final class Container
 
         return static::$container;
     }
+
+    public static function refresh(): BaseContainer
+    {
+        new static();
+
+        return static::instance();
+    }
 }

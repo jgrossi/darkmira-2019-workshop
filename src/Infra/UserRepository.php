@@ -6,7 +6,7 @@ namespace Acme\Infra;
 
 use Acme\Domain\Entity\User;
 
-final class UserRepository extends AbstractRepository
+class UserRepository extends AbstractRepository implements RepositoryInterface
 {
     private const TABLE_NAME = 'users';
 
