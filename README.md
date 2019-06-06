@@ -16,3 +16,9 @@ docker-compose exec php composer install
 ```
 
 Then visit http://localhost:8888 and you're going to see a welcome page.
+
+### Xdebug
+
+Follow the image below to configure xdebug with Phpstorm using Docker.
+
+<img src="https://i.imgur.com/IaHYDwI.png">
