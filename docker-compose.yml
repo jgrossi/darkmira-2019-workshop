@@ -1,0 +1,34 @@
+version: '3.5'
+
+services:
+  php:
+    image: webdevops/php-apache-dev:7.2
+    container_name: darkmira_php
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8888:80
+    environment:
+      WEB_DOCUMENT_ROOT: /var/www/html/public
+    links:
+      - mysql
+    working_dir: /var/www/html
+
+  mysql:
+    image: mysql:5.7
+    build:
+      context: ./docker
+      dockerfile: docker-mysql
+    container_name: darkmira_mysql
+    volumes:
+      - mysql:/var/lyb/mysql:rw
+    ports:
+      - 33068:3306
+    environment:
+      MYSQL_DATABASE: darkmira
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+
+volumes:
+  mysql:

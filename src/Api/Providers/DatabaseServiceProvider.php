@@ -27,9 +27,9 @@ class DatabaseServiceProvider extends AbstractServiceProvider
             [
                 'driver' => 'mysql',
                 'host' => 'localhost',
-                'database' => env('DB_NAME'),
-                'username' => env('DB_USER'),
-                'password' => env('DB_PASSWORD'),
+                'database' => env('MYSQL_DATABASE'),
+                'username' => env('MYSQL_USER'),
+                'password' => env('MYSQL_PASSWORD'),
                 'charset' => 'utf8',
                 'collation' => 'utf8_unicode_ci',
                 'prefix' => '',
