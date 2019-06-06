@@ -13,10 +13,6 @@ services:
       - 8888:80
     environment:
       WEB_DOCUMENT_ROOT: /var/www/html/public
-      MYSQL_DATABASE: darkmira
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
       XDEBUG_CONFIG: "remote_host=host.docker.internal"
       PHP_IDE_CONFIG: "serverName=xdebug-docker"
     links:
