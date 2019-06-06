@@ -4,17 +4,12 @@ declare(strict_types=1);
 
 namespace Acme\Infra;
 
-use Acme\Domain\Entity\EntityInterface;
 use Acme\Domain\Entity\Rate;
 
 final class RateRepository extends AbstractRepository
 {
     private const TABLE_NAME = 'rates';
 
-    /**
-     * @param int $id
-     * @return Rate|EntityInterface
-     */
     public function findById(int $id): Rate
     {
         $model = $this->dbManager

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Acme\Domain\Entity;
 
-class Talk implements EntityInterface
+class Talk
 {
     private $id;
     private $title;

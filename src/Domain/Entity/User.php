@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Acme\Domain\Entity;
 
-class User implements EntityInterface
+class User
 {
     private $id;
     private $name;

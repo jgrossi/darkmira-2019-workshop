@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Acme\Domain\Entity;
 
-class Rate implements EntityInterface
+class Rate
 {
     private $id;
     private $talk;

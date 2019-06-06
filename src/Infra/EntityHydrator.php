@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Acme\Infra;
 
-use Acme\Domain\Entity\EntityInterface;
-
 final class EntityHydrator
 {
     private $data;
@@ -15,7 +13,7 @@ final class EntityHydrator
         $this->data = $data;
     }
 
-    public function hydrate(EntityInterface $entity): EntityInterface
+    public function hydrate($entity)
     {
         foreach ($this->data as $field => $value) {
             $methodName = 'set' . ucfirst($field);
