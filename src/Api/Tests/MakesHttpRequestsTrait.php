@@ -10,6 +10,7 @@ use Zend\Diactoros\ServerRequest;
 trait MakesHttpRequestsTrait
 {
     private $headers = [];
+    protected $data;
 
     public function withHeader(string $name, string $content): self
     {
@@ -23,15 +24,15 @@ trait MakesHttpRequestsTrait
         $method = strtoupper($method);
 
         $request = new ServerRequest(
-            $serverParams = [],
-            $uploadedFiles = [],
+            $_SERVER,
+            $_FILES,
             $uri,
             $method,
-            $body = $method === 'POST' ? $data : [],
+            'php://input',
             $this->headers,
-            $cookies = [],
-            $queryParams = $method === 'GET' ? $data : [],
-            $parsedBody = null
+            $_COOKIE,
+            $method === 'GET' ? $data : [],
+            $method === 'POST' || $method === 'PUT' ? $data : []
         );
 
         return $this->router->dispatch($request);

@@ -9,7 +9,7 @@ use Acme\Infra\RateRepository;
 use Acme\Infra\TalkRepository;
 use Acme\Infra\UserRepository;
 
-final class RateTalkHandler
+class RateTalkHandler
 {
     private $talkRepository;
     private $userRepository;

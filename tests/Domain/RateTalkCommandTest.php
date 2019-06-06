@@ -2,8 +2,8 @@
 
 namespace Acme\Tests\Domain;
 
+use Acme\Api\Tests\TestCase;
 use Acme\Domain\RateTalkCommand;
-use PHPUnit\Framework\TestCase;
 
 final class RateTalkCommandTest extends TestCase
 {
