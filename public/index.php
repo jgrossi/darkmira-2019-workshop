@@ -9,8 +9,14 @@ $application = new Acme\Api\Application();
 $router = $application->getRouter();
 
 $response = $router->dispatch(
-    Zend\Diactoros\ServerRequestFactory::fromGlobals()
+    Zend\Diactoros\ServerRequestFactory::fromGlobals(
+        $_SERVER,
+        $_GET,
+        $_POST,
+        $_COOKIE,
+        $_FILES
+    )
 );
 
-(new Zend\HttpHandlerRunner\Emitter\SapiEmitter)
-    ->emit($response);
+$emitter = new Zend\HttpHandlerRunner\Emitter\SapiEmitter();
+$emitter->emit($response);
