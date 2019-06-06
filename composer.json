@@ -18,5 +18,10 @@
             "Acme\\": "src/",
             "Acme\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": [
+            "docker-compose exec -T php ./vendor/bin/phpunit"
+        ]
     }
 }
