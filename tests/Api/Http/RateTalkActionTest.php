@@ -26,7 +26,7 @@ final class RateTalkActionTest extends TestCase
         $this->assertEquals(10, $data['rateId']);
     }
 
-    public function mockHandler(): void
+    private function mockHandler(): void
     {
         $rate = new Rate();
         $rate->setId(10);
