@@ -23,7 +23,7 @@ final class RateTalkAction
     {
         $params = $request->getParsedBody();
 
-        $data = $this->commandHandler->handle(
+        $rate = $this->commandHandler->handle(
             new RateTalkCommand(
                 (int)$arguments['talkId'],
                 (int)$params['userId'],
@@ -31,6 +31,6 @@ final class RateTalkAction
             )
         );
 
-        return new JsonResponse($data, 201);
+        return new JsonResponse(['rateId' => $rate->getId()], 201);
     }
 }

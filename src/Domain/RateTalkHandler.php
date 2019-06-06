@@ -25,7 +25,7 @@ final class RateTalkHandler
         $this->rateRepository = $rateRepository;
     }
 
-    public function handle(RateTalkCommand $command): array
+    public function handle(RateTalkCommand $command): Rate
     {
         $talk = $this->talkRepository->findById($command->getTalkId());
         $user = $this->userRepository->findById($command->getUserId());
@@ -35,8 +35,6 @@ final class RateTalkHandler
         $rate->setUser($user);
         $rate->setGrade($command->getGrade());
 
-        $rate = $this->rateRepository->create($rate);
-
-        return ['rateId' => $rate->getId()];
+        return $this->rateRepository->create($rate);
     }
 }
